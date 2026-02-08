@@ -79,28 +79,31 @@
 </div>
 
 <script>
-const noBtn = document.getElementById('no');
-const yesBtn = document.getElementById('yes');
+document.addEventListener('DOMContentLoaded', () => {
+  const noBtn = document.getElementById('no');
+  const yesBtn = document.getElementById('yes');
 
-// No button moves around
-noBtn.addEventListener('mouseenter', () => {
-  const windowWidth = window.innerWidth - noBtn.offsetWidth;
-  const windowHeight = window.innerHeight - noBtn.offsetHeight;
+  // No button moves around the screen
+  noBtn.addEventListener('mouseenter', () => {
+    const windowWidth = window.innerWidth - noBtn.offsetWidth;
+    const windowHeight = window.innerHeight - noBtn.offsetHeight;
 
-  const randomX = Math.floor(Math.random() * windowWidth);
-  const randomY = Math.floor(Math.random() * windowHeight);
+    const randomX = Math.floor(Math.random() * windowWidth);
+    const randomY = Math.floor(Math.random() * windowHeight);
 
-  noBtn.style.position = 'fixed';
-  noBtn.style.left = randomX + 'px';
-  noBtn.style.top = randomY + 'px';
-});
+    noBtn.style.position = 'fixed';
+    noBtn.style.left = randomX + 'px';
+    noBtn.style.top = randomY + 'px';
+  });
 
-// Yes button works
-yesBtn.addEventListener('click', () => {
-  alert("Yay! Happy Valentine's Day! 💖");
+  // Yes button works
+  yesBtn.addEventListener('click', () => {
+    alert("Yay! Happy Valentine's Day! 💖");
+  });
 });
 </script>
 
 
 </body>
 </html>
+
