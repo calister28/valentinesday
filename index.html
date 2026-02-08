@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Valentine's Day Invitation</title>
+<style>
+  html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: Arial, sans-serif;
+    background: #ffe6e6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  h1 {
+    color: #e10600;
+    text-align: center;
+    font-size: 2rem;
+    margin: 20px;
+    padding: 0 20px;
+  }
+
+  #photo {
+    width: 40vw;
+    max-width: 250px;
+    height: auto;
+    border-radius: 5%;
+    object-fit: cover;
+    margin: 20px 0;
+  }
+
+  #buttons {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 20px;
+  }
+
+  button {
+    padding: 12px 25px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    background-color: #e10600;
+    color: white;
+    transition: all 0.3s;
+    min-width: 80px;
+  }
+
+  /* Responsive tweaks */
+  @media (max-width: 500px) {
+    h1 {
+      font-size: 1.5rem;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 0.9rem;
+    }
+    #photo {
+      width: 50vw;
+    }
+  }
+</style>
+</head>
+<body>
+
+<h1>Will you be my Valentine Lab2x? 💖</h1>
+<img id="photo" src="./Gemini_Generated_Image_pkw03kpkw03kpkw0.png" alt="Cal">
+<div id="buttons">
+  <button id="yes">Yes</button>
+  <button id="no">No</button>
+</div>
+
+<script>
+const noBtn = document.getElementById('no');
+const yesBtn = document.getElementById('yes');
+
+// No button moves around
+noBtn.addEventListener('mouseenter', () => {
+  const windowWidth = window.innerWidth - noBtn.offsetWidth;
+  const windowHeight = window.innerHeight - noBtn.offsetHeight;
+
+  const randomX = Math.floor(Math.random() * windowWidth);
+  const randomY = Math.floor(Math.random() * windowHeight);
+
+  noBtn.style.position = 'fixed';
+  noBtn.style.left = randomX + 'px';
+  noBtn.style.top = randomY + 'px';
+});
+
+// Yes button works
+yesBtn.addEventListener('click', () => {
+  alert("Yay! Happy Valentine's Day! 💖");
+});
+</script>
+
+
+</body>
+</html>
